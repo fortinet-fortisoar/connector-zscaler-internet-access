@@ -68,13 +68,8 @@ class ZscalerAuth:
                 'grant_type': 'client_credentials',
                 'audience': 'https://api.zscaler.com',
             }
-            # token_resp = self.make_api_call(config, connector_info, token_url=self.token_url, method='POST',
-            #                                 endpoint=self.token_url, headers=headers, data=payload)
-            token_resp = {
-                "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6Ikp...vnI4T_H2rfze0c1Fk",
-                "token_type": "Bearer",
-                "expires_in": 3600
-            }
+            token_resp = self.make_api_call(config, connector_info, token_url=self.token_url, method='POST',
+                                            endpoint=self.token_url, headers=headers, data=payload)
             ts_now = time()
             token_resp['expires_in'] = (ts_now + token_resp['expires_in']) if token_resp.get("expires_in") else None
             token_resp['access_token'] = token_resp.get("access_token")
