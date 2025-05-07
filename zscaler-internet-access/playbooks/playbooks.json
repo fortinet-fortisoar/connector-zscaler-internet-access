@@ -1,0 +1,842 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Zscaler Internet Access - 1.0.0",
+      "description": "Sample playbooks for \"Zscaler Internet Access\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "",
+      "uuid": "f51d28c1-4ead-4c60-ba7a-abfc1f177c13",
+      "id": 378,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [
+        "zscaler",
+        "Zscaler"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Execute an API Request",
+          "aliasName": null,
+          "tag": null,
+          "description": "Execute any Zscaler OpenAPI using the specified API method, endpoint, and payload as input parameters.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1746600743,
+          "collection": "/api/3/workflow_collections/f51d28c1-4ead-4c60-ba7a-abfc1f177c13",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/2a2a095c-e939-4baa-83ed-b134d9051873",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Execute an API Request",
+              "description": null,
+              "arguments": {
+                "name": "Zscaler Internet Access",
+                "config": "test",
+                "params": {
+                  "method": "GET",
+                  "payload": "",
+                  "endpoint": "Execute an API Request",
+                  "Query Parameters": []
+                },
+                "version": "1.0.0",
+                "connector": "zscaler-internet-access",
+                "operation": "execute_api_request",
+                "operationTitle": "Execute an API Request",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "15cf84f3-91e5-419d-87fc-bb4aa883f303"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "25b59ad4-a417-4075-adaa-ba960dbd2165",
+                "title": "Zscaler: Execute an API Request",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "2a2a095c-e939-4baa-83ed-b134d9051873"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Firewall Filtering Rules",
+              "targetStep": "/api/3/workflow_steps/15cf84f3-91e5-419d-87fc-bb4aa883f303",
+              "sourceStep": "/api/3/workflow_steps/2a2a095c-e939-4baa-83ed-b134d9051873",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "f79d5008-715d-4c4a-99f4-aa672082e93d"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "016514df-831a-4a57-ad50-43df5e6ca9a7",
+          "id": 4943,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Zscaler",
+            "zscaler-internet-access"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Network Services",
+          "aliasName": null,
+          "tag": null,
+          "description": "Gets a list of all network services. The search parameters find matching values within the name or description attributes.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1746600213,
+          "collection": "/api/3/workflow_collections/f51d28c1-4ead-4c60-ba7a-abfc1f177c13",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/84f7e44a-bba1-4e8f-b896-01d92e8b89c1",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Network Services",
+              "description": null,
+              "arguments": {
+                "name": "Zscaler Internet Access",
+                "config": "test",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "zscaler-internet-access",
+                "operation": "get_network_services",
+                "operationTitle": "Get Network Services",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "160",
+              "left": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "9fcc860c-0106-4398-8d4a-2093205efb1b"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "e64d55eb-3b96-4d34-851b-587d32e901d0",
+                "title": "Zscaler: Get Network Services",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "84f7e44a-bba1-4e8f-b896-01d92e8b89c1"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Firewall Filtering Rules",
+              "targetStep": "/api/3/workflow_steps/9fcc860c-0106-4398-8d4a-2093205efb1b",
+              "sourceStep": "/api/3/workflow_steps/84f7e44a-bba1-4e8f-b896-01d92e8b89c1",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "964d0066-cfb0-4bde-8120-bc989e8eed09"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "3f55303d-f5c7-405f-a9af-71d639ac2295",
+          "id": 4939,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Zscaler",
+            "zscaler-internet-access"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Network Applications Groups",
+          "aliasName": null,
+          "tag": null,
+          "description": "Gets a list of all network application groups.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1746600423,
+          "collection": "/api/3/workflow_collections/f51d28c1-4ead-4c60-ba7a-abfc1f177c13",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ffc1f398-ea66-4d72-8c61-552ca121888f",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Network Applications Groups",
+              "description": null,
+              "arguments": {
+                "name": "Zscaler Internet Access",
+                "config": "test",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "zscaler-internet-access",
+                "operation": "get_network_application_groups",
+                "operationTitle": "Get Network Applications Groups",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "831b8b4a-5b98-4f23-bf06-21f887700e9f"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "29577137-d9f1-4b55-a91e-2436202958f3",
+                "title": "Zscaler: Get Network Applications Groups",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "ffc1f398-ea66-4d72-8c61-552ca121888f"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Firewall Filtering Rules",
+              "targetStep": "/api/3/workflow_steps/831b8b4a-5b98-4f23-bf06-21f887700e9f",
+              "sourceStep": "/api/3/workflow_steps/ffc1f398-ea66-4d72-8c61-552ca121888f",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "3eece7da-2edf-4fbe-b65d-3bbfedf2eb77"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "49b23f10-d353-4215-9b33-a3eb3db9fb60",
+          "id": 4942,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Zscaler",
+            "zscaler-internet-access"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Network Applications",
+          "aliasName": null,
+          "tag": null,
+          "description": "Gets a list of all predefined network applications.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1746600518,
+          "collection": "/api/3/workflow_collections/f51d28c1-4ead-4c60-ba7a-abfc1f177c13",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/6ad61ab1-5c95-445d-ae1a-3fbb0f735561",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Network Applications",
+              "description": null,
+              "arguments": {
+                "name": "Zscaler Internet Access",
+                "config": "test",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "zscaler-internet-access",
+                "operation": "get_network_applications",
+                "operationTitle": "Get Network Applications",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "d7cdee80-1c39-426b-9ac8-5ec6ded93842"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "d0a94f32-2773-40c7-b95a-40a8df2b5a9f",
+                "title": "Zscaler: Get Network Applications",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "6ad61ab1-5c95-445d-ae1a-3fbb0f735561"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Firewall Filtering Rules",
+              "targetStep": "/api/3/workflow_steps/d7cdee80-1c39-426b-9ac8-5ec6ded93842",
+              "sourceStep": "/api/3/workflow_steps/6ad61ab1-5c95-445d-ae1a-3fbb0f735561",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "929c587e-f46c-449b-82bd-b524ef50e8c8"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "606098ad-bcdb-4c75-a379-4a09325e8665",
+          "id": 4938,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Zscaler",
+            "zscaler-internet-access"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Network Services Groups",
+          "aliasName": null,
+          "tag": null,
+          "description": "Gets a list of all network service groups.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1746600463,
+          "collection": "/api/3/workflow_collections/f51d28c1-4ead-4c60-ba7a-abfc1f177c13",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/568969be-b1fc-4d30-9b6d-db60d211a0b9",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Network Services Groups",
+              "description": null,
+              "arguments": {
+                "name": "Zscaler Internet Access",
+                "config": "test",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "zscaler-internet-access",
+                "operation": "get_network_service_groups",
+                "operationTitle": "Get Network Services Groups",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "c0b99489-d980-4809-8680-ffc337081cd6"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "7202fce0-aa88-4a0c-b368-afb6a4a39d68",
+                "title": "Zscaler: Get Network Services Groups",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "568969be-b1fc-4d30-9b6d-db60d211a0b9"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Firewall Filtering Rules",
+              "targetStep": "/api/3/workflow_steps/c0b99489-d980-4809-8680-ffc337081cd6",
+              "sourceStep": "/api/3/workflow_steps/568969be-b1fc-4d30-9b6d-db60d211a0b9",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "59de1bf3-392f-4507-8c54-8eb250f8009d"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "9c454ddc-dbc4-4770-92ee-a18532feb9ec",
+          "id": 4941,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Zscaler",
+            "zscaler-internet-access"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Specific Firewall Filtering Rule",
+          "aliasName": null,
+          "tag": null,
+          "description": "Gets all rules in the firewall filtering policy.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1746600007,
+          "collection": "/api/3/workflow_collections/f51d28c1-4ead-4c60-ba7a-abfc1f177c13",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/50e1ea7f-ba4d-46a0-9aaf-8072b14c118a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Specific Firewall Filtering Rule",
+              "description": null,
+              "arguments": {
+                "name": "Zscaler Internet Access",
+                "config": "test",
+                "params": {
+                  "id": "3453"
+                },
+                "version": "1.0.0",
+                "connector": "zscaler-internet-access",
+                "operation": "get_specific_firewall_filtering_rule",
+                "operationTitle": "Get Specific Firewall Filtering Rule",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "6ea73b90-6427-4f4e-967a-82d533492a02"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "173d8274-a3d3-432f-87de-ad3f40f9dd4d",
+                "title": "Zscaler: Get Specific Firewall Filtering Rule",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "50e1ea7f-ba4d-46a0-9aaf-8072b14c118a"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Firewall Filtering Rules",
+              "targetStep": "/api/3/workflow_steps/6ea73b90-6427-4f4e-967a-82d533492a02",
+              "sourceStep": "/api/3/workflow_steps/50e1ea7f-ba4d-46a0-9aaf-8072b14c118a",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "1787649e-63b3-4562-9063-0f547a684d0b"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "a9f90c7a-b2cc-45d1-8031-6c4bec17346c",
+          "id": 4936,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Zscaler",
+            "zscaler-internet-access"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Firewall Filtering Rules",
+          "aliasName": null,
+          "tag": null,
+          "description": "Gets all rules in the firewall filtering policy.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1746599953,
+          "collection": "/api/3/workflow_collections/f51d28c1-4ead-4c60-ba7a-abfc1f177c13",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/2de53529-b44f-405e-8d98-dd7046f1a28d",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Firewall Filtering Rules",
+              "description": null,
+              "arguments": {
+                "name": "Zscaler Internet Access",
+                "config": "test",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "zscaler-internet-access",
+                "operation": "get_firewall_filtering_rules",
+                "operationTitle": "Get Firewall Filtering Rules",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "2820f3e6-4e35-41ad-b650-e27099e29a90"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "1ac4dff0-df66-4912-a47d-0670fd48501c",
+                "title": "Zscaler: Get Firewall Filtering Rules",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "2de53529-b44f-405e-8d98-dd7046f1a28d"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Firewall Filtering Rules",
+              "targetStep": "/api/3/workflow_steps/2820f3e6-4e35-41ad-b650-e27099e29a90",
+              "sourceStep": "/api/3/workflow_steps/2de53529-b44f-405e-8d98-dd7046f1a28d",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "c634d9ee-b53f-4e4e-a3b9-0152f58c1366"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "adb15d2a-4928-4227-bcd7-3b28dcb6e7ad",
+          "id": 4935,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Zscaler",
+            "zscaler-internet-access"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Time Windows",
+          "aliasName": null,
+          "tag": null,
+          "description": "Gets a list of time intervals used for by the Firewall policy or the URL Filtering policy.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1746600245,
+          "collection": "/api/3/workflow_collections/f51d28c1-4ead-4c60-ba7a-abfc1f177c13",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/3cfb7304-874a-41c7-a253-21120cfb2b53",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Time Windows",
+              "description": null,
+              "arguments": {
+                "name": "Zscaler Internet Access",
+                "config": "test",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "zscaler-internet-access",
+                "operation": "get_time_windows",
+                "operationTitle": "Get Time Windows",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "744d3f0a-0569-4dee-b2af-3c1de8b20087"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "bcb3a29f-1aff-4141-aa4d-820b5c5f04e4",
+                "title": "Zscaler: Get Time Windows",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "3cfb7304-874a-41c7-a253-21120cfb2b53"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Firewall Filtering Rules",
+              "targetStep": "/api/3/workflow_steps/744d3f0a-0569-4dee-b2af-3c1de8b20087",
+              "sourceStep": "/api/3/workflow_steps/3cfb7304-874a-41c7-a253-21120cfb2b53",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "5bcb7042-b9b3-4b7a-b4aa-be022a3dfaed"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "f9054717-0401-4f55-a9cb-12d7c9251867",
+          "id": 4937,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Zscaler",
+            "zscaler-internet-access"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "zscaler",
+    "Zscaler",
+    "zscaler-internet-access"
+  ]
+}
