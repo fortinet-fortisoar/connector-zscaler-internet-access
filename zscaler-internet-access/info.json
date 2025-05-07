@@ -73,7 +73,7 @@
       "title": "Get Firewall Filtering Rules",
       "annotation": "get_firewall_filtering_rules",
       "category": "utilities",
-      "description": "Gets all rules in the firewall filtering policy.",
+      "description": "Gets all configured rules within the Zscaler firewall filtering policy.",
       "enabled": true,
       "visible": true,
       "parameters": [],
@@ -372,7 +372,7 @@
       "annotation": "get_specific_firewall_filtering_rule",
       "category": "utilities",
       "http_method": "GET",
-      "description": "Gets the firewall filtering policy rule information for the specified ID.",
+      "description": "Get detailed information about a specific firewall filtering policy rule in the Zscaler platform, identified by its unique rule ID.",
       "enabled": true,
       "visible": true,
       "output_schema": {
@@ -699,11 +699,17 @@
       "title": "Get Network Applications",
       "annotation": "get_network_applications",
       "category": "utilities",
-      "description": "Gets a list of all predefined network applications.",
+      "description": "Gets a list of all predefined network applications From Zscaler platform, including their associated categories, protocols, and other relevant metadata used for policy configuration and traffic filtering.",
       "enabled": true,
       "visible": true,
       "parameters": [],
-      "output_schema": {}
+      "output_schema": {
+        "id": "",
+        "name": "",
+        "networkApplications": [
+        ],
+        "description": "string"
+      }
     },
     {
       "operation": "get_network_services",
@@ -748,8 +754,8 @@
           "title": "Language",
           "name": "locale",
           "type": "text",
-          "tooltip": "Specify one of the supported locales (i.e., en-US, de-DE, es-ES, fr-FR, ja-JP, zh-CN), the network service's description is localized into the requested language.",
-          "description": "Specify one of the supported locales (i.e., en-US, de-DE, es-ES, fr-FR, ja-JP, zh-CN), the network service's description is localized into the requested language.",
+          "tooltip": "Specify one of the supported locales (i.e., en-US, dead, Estes, friar, AJP, which), the network service's description is localized into the requested language.",
+          "description": "Specify one of the supported locales (i.e., en-US, dead, Estes, friar, AJP, which), the network service's description is localized into the requested language.",
           "required": false,
           "visible": true,
           "editable": true
@@ -795,7 +801,7 @@
       "category": "utilities",
       "endpoint": "/networkServiceGroups",
       "http_method": "GET",
-      "description": "Gets a list of all network service groups.",
+      "description": "Gets a list of all network service groups configured in the Zscaler platform.",
       "enabled": true,
       "visible": true,
       "parameters": [],
@@ -846,7 +852,7 @@
       "category": "utilities",
       "endpoint": "/networkApplicationGroups",
       "http_method": "GET",
-      "description": "Gets a list of all network application groups.",
+      "description": "Gets a list of all network application groups defined within the Zscaler platform.",
       "enabled": true,
       "visible": true,
       "parameters": [],
@@ -865,7 +871,7 @@
       "category": "utilities",
       "endpoint": "",
       "http_method": "POST",
-      "description": "Execute any Zscaler OpenAPI using the specified API method, endpoint, and payload as input parameters.",
+      "description": "Execute any Zscaler OpenAI using the specified API method, endpoint, and payload as input parameters.",
       "enabled": true,
       "visible": true,
       "parameters": [
@@ -876,8 +882,8 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specify the REST API endpoint for the action to perform. Note: Do not include the host URL in the endpoint. ex /zia/api/v1/firewallFilteringRules or /zia/api/v1/networkApplications.",
-          "description": "Specify the REST API endpoint for the action to perform. Note: Do not include the host URL in the endpoint. ex /zia/api/v1/firewallFilteringRules or /zia/api/v1/networkApplications."
+          "tooltip": "Specify the REST API endpoint for the action to perform. Note: Do not include the host URL in the endpoint. Ex /via/API/v1/firewallFilteringRules or /via/API/v1/networkApplications.",
+          "description": "Specify the REST API endpoint for the action to perform. Note: Do not include the host URL in the endpoint. Ex /via/API/v1/firewallFilteringRules or /via/API/v1/networkApplications."
         },
         {
           "name": "method",
@@ -903,8 +909,7 @@
           "editable": true,
           "visible": true,
           "required": false,
-          "value": {},
-          "description": "Specify the he Rest API query parameters object in JSON format."
+          "description": "Specify the Rest API query parameters object in JSON format."
         },
         {
           "title": "Request Body/Payload",
