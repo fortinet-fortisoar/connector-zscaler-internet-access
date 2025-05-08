@@ -1,0 +1,927 @@
+{
+  "name": "zscaler-internet-access",
+  "label": "Zscaler Internet Access",
+  "version": "1.0.0",
+  "description": "Zscaler Internet Access (ZIA) connector enables automated operations such as Get Firewall Filtering Rules, Get Specific Firewall Filtering Rule, Get Time Windows, Get Network Applications, Get Network Services, Get Network Services Groups, Get Network Applications Groups, and Execute an API Request.",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "category": "Cloud Security",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "configuration": {
+    "fields": [
+      {
+        "name": "server_url",
+        "title": "Server URL",
+        "description": "Specify the Server host URL for the Zscaler API.",
+        "tooltip": "Specify the Server host URL for the Zscaler API.",
+        "required": true,
+        "type": "text",
+        "editable": true,
+        "visible": true,
+        "value": "https://api.zsapi.net"
+      },
+      {
+        "name": "client_id",
+        "title": "Client ID",
+        "description": "Specify the Client ID for Zscaler OneAPI authentication.",
+        "tooltip": "Specify the Client ID for Zscaler OneAPI authentication.",
+        "required": true,
+        "type": "text",
+        "editable": true,
+        "visible": true
+      },
+      {
+        "name": "client_secret",
+        "title": "Client Secret",
+        "description": "Specify the Client Secret for Zscaler OneAPI authentication.",
+        "tooltip": "Specify the Client Secret for Zscaler API authentication.",
+        "required": true,
+        "type": "password",
+        "editable": true,
+        "visible": true
+      },
+      {
+        "name": "token_url",
+        "title": "ZIdentity's Auth Token Endpoint",
+        "description": "Specify the ZIdentity auth token endpoint. This endpoint generates the Bearer token. Note: Here, <Vanity Domain> refers to the domain name used by your organization.",
+        "tooltip": "Specify the ZIdentity auth token endpoint. This endpoint generates the Bearer token. Note: Here, <Vanity Domain> refers to the domain name used by your organization.",
+        "required": true,
+        "type": "text",
+        "editable": true,
+        "visible": true,
+        "value": "https://<Vanity Domain>.zslogin.net/oauth2/v1/token",
+        "placeholder": "https://<Vanity Domain>.zslogin.net/oauth2/v1/token"
+      },
+      {
+        "name": "verify_ssl",
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is selected, i.e., set to true.",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is selected, i.e., set to true.",
+        "required": false,
+        "type": "checkbox",
+        "value": "true",
+        "editable": true,
+        "visible": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_firewall_filtering_rules",
+      "title": "Get Firewall Filtering Rules",
+      "annotation": "get_firewall_filtering_rules",
+      "category": "utilities",
+      "description": "Gets all configured rules within the Zscaler firewall filtering policy.",
+      "enabled": true,
+      "visible": true,
+      "parameters": [],
+      "output_schema": {
+        "id": "",
+        "name": "",
+        "order": "",
+        "rank": "",
+        "locations": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "locationGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "departments": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "groups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "users": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "timeWindows": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "workloadGroups": [
+          {
+            "id": "",
+            "name": "",
+            "description": "",
+            "expressionJson": {
+              "expressionContainers": [
+                {
+                  "tagType": "",
+                  "operator": "",
+                  "tagContainer": {
+                    "tags": [
+                      {
+                        "key": "",
+                        "value": ""
+                      }
+                    ],
+                    "operator": ""
+                  }
+                }
+              ]
+            },
+            "expression": "",
+            "lastModifiedTime": "",
+            "lastModifiedBy": {
+              "id": "",
+              "name": "",
+              "externalId": "",
+              "extensions": {
+                "additionalProp1": "",
+                "additionalProp2": "",
+                "additionalProp3": ""
+              }
+            }
+          }
+        ],
+        "action": "",
+        "state": "",
+        "description": "",
+        "lastModifiedTime": "",
+        "lastModifiedBy": {
+          "id": "",
+          "name": "",
+          "externalId": "",
+          "extensions": {
+            "additionalProp1": "",
+            "additionalProp2": "",
+            "additionalProp3": ""
+          }
+        },
+        "srcIps": [
+        ],
+        "srcIpGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "srcIpv6Groups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "sourceCountries": [
+        ],
+        "excludeSrcCountries": "",
+        "destAddresses": [
+        ],
+        "destIpCategories": [
+        ],
+        "destCountries": [
+        ],
+        "destIpGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "destIpv6Groups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "nwServices": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "nwServiceGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "nwApplications": [],
+        "nwApplicationGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "appServices": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "appServiceGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "devices": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "deviceGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "deviceTrustLevels": [
+        ],
+        "labels": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "defaultRule": "",
+        "predefined": ""
+      }
+    },
+    {
+      "operation": "get_specific_firewall_filtering_rule",
+      "title": "Get Specific Firewall Filtering Rule",
+      "annotation": "get_specific_firewall_filtering_rule",
+      "category": "utilities",
+      "http_method": "GET",
+      "description": "Get detailed information about a specific firewall filtering policy rule in the Zscaler platform, identified by its unique rule ID.",
+      "enabled": true,
+      "visible": true,
+      "output_schema": {
+        "id": "",
+        "name": "",
+        "order": "",
+        "rank": "",
+        "locations": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "locationGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "departments": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "groups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "users": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "timeWindows": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "workloadGroups": [
+          {
+            "id": "",
+            "name": "",
+            "description": "",
+            "expressionJson": {
+              "expressionContainers": [
+                {
+                  "tagType": "",
+                  "operator": "",
+                  "tagContainer": {
+                    "tags": [
+                      {
+                        "key": "",
+                        "value": ""
+                      }
+                    ],
+                    "operator": ""
+                  }
+                }
+              ]
+            },
+            "expression": "",
+            "lastModifiedTime": "",
+            "lastModifiedBy": {
+              "id": "",
+              "name": "",
+              "externalId": "",
+              "extensions": {
+                "additionalProp1": "",
+                "additionalProp2": "",
+                "additionalProp3": ""
+              }
+            }
+          }
+        ],
+        "action": "",
+        "state": "",
+        "description": "",
+        "lastModifiedTime": "",
+        "lastModifiedBy": {
+          "id": "",
+          "name": "",
+          "externalId": "",
+          "extensions": {
+            "additionalProp1": "",
+            "additionalProp2": "",
+            "additionalProp3": ""
+          }
+        },
+        "srcIps": [
+        ],
+        "srcIpGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "srcIpv6Groups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "sourceCountries": [
+        ],
+        "excludeSrcCountries": true,
+        "destAddresses": [
+        ],
+        "destIpCategories": [
+        ],
+        "destCountries": [
+        ],
+        "destIpGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "destIpv6Groups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "nwServices": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "nwServiceGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "nwApplications": [
+        ],
+        "nwApplicationGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "appServices": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "appServiceGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "devices": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "deviceGroups": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "deviceTrustLevels": [
+        ],
+        "labels": [
+          {
+            "id": "",
+            "name": "",
+            "externalId": "",
+            "extensions": {
+              "additionalProp1": "",
+              "additionalProp2": "",
+              "additionalProp3": ""
+            }
+          }
+        ],
+        "defaultRule": "",
+        "predefined": ""
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "title": "ID",
+          "description": "Specify the ID of the firewall filtering rule for which you want to retrieve the details.",
+          "tooltip": "Specify the ID of the firewall filtering rule for which you want to retrieve the details.",
+          "type": "text",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "operation": "get_time_windows",
+      "title": "Get Time Windows",
+      "annotation": "get_time_windows",
+      "category": "utilities",
+      "description": "Gets a list of time intervals used for by the Firewall policy or the URL Filtering policy.",
+      "enabled": true,
+      "visible": true,
+      "parameters": [],
+      "output_schema": {
+        "id": "",
+        "name": "",
+        "startTime": "",
+        "endTime": "",
+        "dayOfWeek": []
+      }
+    },
+    {
+      "operation": "get_network_applications",
+      "title": "Get Network Applications",
+      "annotation": "get_network_applications",
+      "category": "utilities",
+      "description": "Gets a list of all predefined network applications From Zscaler platform, including their associated categories, protocols, and other relevant metadata used for policy configuration and traffic filtering.",
+      "enabled": true,
+      "visible": true,
+      "parameters": [],
+      "output_schema": {
+        "id": "",
+        "name": "",
+        "networkApplications": [
+        ],
+        "description": "string"
+      }
+    },
+    {
+      "operation": "get_network_services",
+      "title": "Get Network Services",
+      "annotation": "get_network_services",
+      "category": "utilities",
+      "endpoint": "/networkServices",
+      "http_method": "GET",
+      "description": "Gets a list of all network services. The search parameters find matching values within the name or description attributes.",
+      "enabled": true,
+      "visible": true,
+      "parameters": [
+        {
+          "title": "Filter String",
+          "name": "search",
+          "type": "text",
+          "tooltip": "Specify the filter string used to filter services based on their name or description attributes.",
+          "description": "Specify the filter string used to filter services based on their name or description attributes.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Protocol",
+          "name": "protocol",
+          "type": "select",
+          "tooltip": "Select the protocol by which to filter network services.",
+          "description": "Select the protocol by which to filter network services.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "options": [
+            "ICMP",
+            "TCP",
+            "UDP",
+            "GRE",
+            "ESP",
+            "OTHER"
+          ]
+        },
+        {
+          "title": "Language",
+          "name": "locale",
+          "type": "text",
+          "tooltip": "Specify one of the supported locales (i.e., en-US, dead, Estes, friar, AJP, which), the network service's description is localized into the requested language.",
+          "description": "Specify one of the supported locales (i.e., en-US, dead, Estes, friar, AJP, which), the network service's description is localized into the requested language.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "name": "",
+        "tag": "",
+        "srcTcpPorts": [
+          {
+            "start": "",
+            "end": ""
+          }
+        ],
+        "destTcpPorts": [
+          {
+            "start": "",
+            "end": ""
+          }
+        ],
+        "srcUdpPorts": [
+          {
+            "start": "",
+            "end": ""
+          }
+        ],
+        "destUdpPorts": [
+          {
+            "start": "",
+            "end": ""
+          }
+        ],
+        "type": "",
+        "description": "",
+        "isNameL10nTag": ""
+      }
+    },
+    {
+      "operation": "get_network_service_groups",
+      "title": "Get Network Services Groups",
+      "annotation": "get_network_service_groups",
+      "category": "utilities",
+      "endpoint": "/networkServiceGroups",
+      "http_method": "GET",
+      "description": "Gets a list of all network service groups configured in the Zscaler platform.",
+      "enabled": true,
+      "visible": true,
+      "parameters": [],
+      "output_schema": {
+        "id": "",
+        "name": "",
+        "services": [
+          {
+            "id": "",
+            "name": "",
+            "tag": "",
+            "srcTcpPorts": [
+              {
+                "start": "",
+                "end": ""
+              }
+            ],
+            "destTcpPorts": [
+              {
+                "start": "",
+                "end": ""
+              }
+            ],
+            "srcUdpPorts": [
+              {
+                "start": "",
+                "end": ""
+              }
+            ],
+            "destUdpPorts": [
+              {
+                "start": "",
+                "end": ""
+              }
+            ],
+            "type": "",
+            "description": "",
+            "isNameL10nTag": ""
+          }
+        ],
+        "description": ""
+      }
+    },
+    {
+      "operation": "get_network_application_groups",
+      "title": "Get Network Applications Groups",
+      "annotation": "get_network_application_groups",
+      "category": "utilities",
+      "endpoint": "/networkApplicationGroups",
+      "http_method": "GET",
+      "description": "Gets a list of all network application groups defined within the Zscaler platform.",
+      "enabled": true,
+      "visible": true,
+      "parameters": [],
+      "output_schema": {
+        "id": "",
+        "name": "",
+        "networkApplications": [
+        ],
+        "description": ""
+      }
+    },
+    {
+      "operation": "execute_api_request",
+      "title": "Execute an API Request",
+      "annotation": "execute_api_request",
+      "category": "utilities",
+      "endpoint": "",
+      "http_method": "POST",
+      "description": "Execute any Zscaler OpenAI using the specified API method, endpoint, and payload as input parameters.",
+      "enabled": true,
+      "visible": true,
+      "parameters": [
+        {
+          "name": "endpoint",
+          "title": "Endpoint",
+          "type": "text",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "tooltip": "Specify the REST API endpoint for the action to perform. Note: Do not include the host URL in the endpoint. Ex /via/API/v1/firewallFilteringRules or /via/API/v1/networkApplications.",
+          "description": "Specify the REST API endpoint for the action to perform. Note: Do not include the host URL in the endpoint. Ex /via/API/v1/firewallFilteringRules or /via/API/v1/networkApplications."
+        },
+        {
+          "name": "method",
+          "title": "Method",
+          "type": "select",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "value": "GET",
+          "description": "The HTTP Method to use",
+          "options": [
+            "DELETE",
+            "GET",
+            "PATCH",
+            "POST",
+            "PUT"
+          ]
+        },
+        {
+          "name": "Query Parameters",
+          "title": "query_params",
+          "type": "json",
+          "editable": true,
+          "visible": true,
+          "required": false,
+          "description": "Specify the Rest API query parameters object in JSON format."
+        },
+        {
+          "title": "Request Body/Payload",
+          "name": "payload",
+          "type": "json",
+          "editable": true,
+          "visible": true,
+          "required": false,
+          "description": "The payload needed for the call. Use empty brackets if there is no payload."
+        }
+      ],
+      "output_schema": {}
+    }
+  ]
+}
